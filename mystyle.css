@@ -1,0 +1,52 @@
+/* mystyles.css */
+/* Plain demo CSS for teaching purposes */
+
+/* --- Page basics --- */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* --- Header --- */
+header {
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header p {
+  margin: 8px 0 0;
+  font-size: 16px;
+}
+
+/* --- Navigation --- */
+nav {
+  margin-top: 12px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* --- Main content area --- */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-col
+
