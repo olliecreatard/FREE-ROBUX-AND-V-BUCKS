@@ -1,87 +1,47 @@
-/* Body Styling */
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: white;
   text-align: center;
-  padding: 50px;
-  background-color: #f4f4f4;
-  /* Smooth transition for background color change */
-  transition: background-color 0.5s; 
+  font-family: sans-serif; /* Basic font */
 }
 
 h1 {
-  color: #333;
+  color: black;
 }
 
-/* Button Styling */
-.button-row {
-  margin-bottom: 50px;
-  transition: opacity 0.5s;
-}
-
-.btn {
-  padding: 20px 30px;
-  margin: 10px;
-  background-color: #007BFF;
+/* Big blocky buttons */
+button {
+  padding: 15px;
+  margin: 5px;
+  background-color: blue;
   color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
+  border: 2px solid black;
+  font-size: 18px;
   cursor: pointer;
 }
 
-.btn:hover {
-  background-color: #0056b3;
+/* Simple Loading Text */
+#waitMessage {
+  display: none;
+  font-size: 25px;
+  color: blue;
+  margin-top: 30px;
 }
 
-/* Loading Message Styling */
-#loading-msg {
-  display: none; /* Hidden initially */
-  font-size: 30px;
-  font-weight: bold;
-  color: #007BFF;
-  margin-top: 50px;
-}
-
-/* DEFINITION CARD STYLING */
-#definition-card {
-  display: none; 
+/* The Definition Box - Looks like a plain card */
+#resultBox {
+  display: none;
+  border: 5px solid black;
+  width: 50%;
+  margin: 50px auto; /* Centers the box */
+  padding: 20px;
   background-color: white;
-  border: 6px solid #333;
-  border-radius: 15px;
-  padding: 40px;
-  margin: 0 auto;
-  max-width: 800px;
-  text-align: left;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-  
-  /* Animation for Zoom In */
-  animation: zoomIn 0.5s ease-out; 
 }
 
-@keyframes zoomIn {
-  from { transform: scale(0); }
-  to { transform: scale(1); }
+#resultBox h1 {
+  font-size: 60px;
+  margin: 0px;
 }
 
-.word-title {
-  font-size: 80px;
-  margin: 0;
-  color: #000;
-  letter-spacing: -2px;
-}
-
-.phonetic {
-  color: #555;
+#resultBox p {
   font-size: 30px;
-  margin-bottom: 20px;
-  display: block;
-  font-style: italic;
-}
-
-.meaning {
-  font-size: 40px;
-  line-height: 1.3;
-  color: #222;
-  font-weight: 500;
 }
