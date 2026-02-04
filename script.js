@@ -20,7 +20,7 @@ function runCode() {
 
     document.body.style.backgroundColor = "red";
 
-    document.getElementById("mainTitle").innerText = "Oh no...";
+    document.getElementById("mainTitle").innerText = "YOU REALLY ARE";
 
   }, 3000);
 }
