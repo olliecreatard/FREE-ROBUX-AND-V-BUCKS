@@ -1,26 +1,30 @@
-function startPrank() {
+function runCode() {
+  // 1. Hide the buttons
+  var buttons = document.getElementById("buttonBox");
+  buttons.style.display = "none";
   
-  document.getElementById("buttons-container").style.display = "none";
-  document.getElementById("sub-title").style.display = "none";
+  var text = document.getElementById("subTitle");
+  text.style.display = "none";
 
+  // 2. Show the "Redeeming" message
+  var message = document.getElementById("waitMessage");
+  message.style.display = "block";
 
-  let loader = document.getElementById("loading-msg");
-  loader.style.display = "block";
-
-  
+  // 3. Wait 3 seconds then show the prank
   setTimeout(function() {
     
-    
-    loader.style.display = "none";
+    // Hide the message
+    message.style.display = "none";
 
-   
-    document.getElementById("definition-card").style.display = "block";
+    // Show the box
+    var box = document.getElementById("resultBox");
+    box.style.display = "block";
 
+    // Change background to red
+    document.body.style.backgroundColor = "red";
 
-    document.body.style.backgroundColor = "#ffcccc";
+    // Change title text
+    document.getElementById("mainTitle").innerText = "Oh no...";
 
-
-    document.getElementById("main-title").innerText = "Oh no...";
-
-  }, 3000); 
+  }, 3000);
 }
