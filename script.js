@@ -22,5 +22,5 @@ function runCode() {
 
     document.getElementById("mainTitle").innerText = "YOU REALLY ARE";
 
-  }, 2000);
+  }, 1500);
 }
