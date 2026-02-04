@@ -30,7 +30,7 @@ button:hover {
 #waitMessage {
   display: none;
   font-size: 30px;
-  color: blue;
+  color: white;
   font-weight: bold;
   margin-top: 40px;
 }
