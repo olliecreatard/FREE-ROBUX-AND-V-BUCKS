@@ -3,50 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FREE ROBUX & V-BUCKS</title>
+  <title>Selection Demo</title>
   <link rel="stylesheet" href="mystyle.css" />
 </head>
 
 <body>
 
   <header>
-    <h1>Demo Website</h1>
-    <p>HTML linked to an external CSS file</p>
+    <h1>Selection Demo</h1>
     <nav>
       <a href="#">Home</a>
-      <a href="#">Page One</a>
-      <a href="#">Page Two</a>
     </nav>
   </header>
 
   <main>
-    <h2>Why Use External CSS?</h2>
-    <p>This page demonstrates how an HTML file can link to an external stylesheet.</p>
-
+    <h2>Choose an Amount</h2>
+    <p>Click the button below to start.</p>
 
     <div class="button-row">
-      <a class="button" href="#">CLICK HERE FOR FREE ROBUX & V-BUCKS</a>
+      <a class="button" href="#">Select Amount</a>
     </div>
   </main>
 
-  <footer>
-    <p>JUST A JOKE NOT REAL</p>
-  </footer>
-
   <script>
-  
+    // Find the button
     const btn = document.querySelector('.button');
 
-
+    // Run this when clicked
     btn.onclick = function(event) {
-      event.preventDefault(); 
-    
-      let username = prompt("Please enter your username:");
-      
-  
-      if(username) {
-        console.log("User typed: " + username + "GET SCAMMED BUDDY!");
-      }
+        event.preventDefault();
+        
+        // Ask the user to type one of the specific numbers
+        let choice = prompt("Please type one of the following amounts:\n1000\n10000\n100000\n1000000");
+
+        // Check the answer
+        if (choice === "1000" || choice === "10000" || choice === "100000" || choice === "1000000") {
+            alert("Success! You chose: " + choice);
+            console.log("User selected:", choice);
+        } else {
+            alert("That was not one of the options.");
+        }
     };
   </script>
 
