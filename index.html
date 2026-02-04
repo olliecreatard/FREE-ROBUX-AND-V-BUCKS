@@ -3,14 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Selection Demo</title>
+  <title>Editable Selection Demo</title>
+  
   <link rel="stylesheet" href="mystyle.css" />
+
   <style>
-    /* Adding a little spacing between the buttons so they look nice */
+    /* OPTIONAL: Basic styling to make the buttons look good immediately */
     .button-row {
       display: flex;
-      gap: 10px; /* Space between buttons */
-      flex-wrap: wrap; /* Allows buttons to wrap if screen is small */
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    h1 {
+      border-bottom: 2px dashed #ccc; /* Shows that it is editable */
+      padding-bottom: 5px;
+      min-height: 40px; /* Ensures you can click it even if empty */
     }
   </style>
 </head>
@@ -18,47 +34,25 @@
 <body>
 
   <header>
-    <h1>Selection Demo</h1>
+    <h1 contenteditable="true">[ Click Here to Edit This Title ]</h1>
+    
     <nav>
       <a href="#">Home</a>
-      <a href="#">Page One</a>
     </nav>
   </header>
 
   <main>
-    <h2>Choose an Amount</h2>
-    <p>Select an amount below to get started:</p>
+    <p>Select an amount below:</p>
 
     <div class="button-row">
-      <a class="button" href="#" onclick="processChoice('1000')">1,000</a>
-      <a class="button" href="#" onclick="processChoice('10,000')">10,000</a>
-      <a class="button" href="#" onclick="processChoice('100,000')">100,000</a>
-      <a class="button" href="#" onclick="processChoice('1,000,000')">1,000,000</a>
+      <a class="button" href="#" data-amount="1000">1,000</a>
+      <a class="button" href="#" data-amount="10000">10,000</a>
+      <a class="button" href="#" data-amount="100000">100,000</a>
+      <a class="button" href="#" data-amount="1000000">1,000,000</a>
     </div>
   </main>
 
-  <footer>
-    <p>Demo Page © 2026</p>
-  </footer>
-
-  <script>
-    // This function runs whenever ANY of the buttons above are clicked.
-    // The 'amount' variable holds the number from the button you clicked.
-    function processChoice(amount) {
-      
-      // 1. Ask for the username immediately
-      let username = prompt("You selected " + amount + "!\n\nPlease enter your username to continue:");
-
-      // 2. Check if they actually typed a name
-      if (username) {
-        alert("Success!\nUser: " + username + "\nSelected Amount: " + amount);
-        console.log("User: " + username + " | Amount: " + amount);
-      } else {
-        // If they hit cancel or left it blank
-        alert("You must enter a username to continue.");
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
