@@ -11,6 +11,8 @@
       text-align: center;
       padding: 50px;
       background-color: #f4f4f4;
+      /* Smooth transition for background color change */
+      transition: background-color 0.5s; 
     }
 
     h1 {
@@ -19,78 +21,93 @@
 
     /* Button Styling */
     .button-row {
-      margin-bottom: 30px;
+      margin-bottom: 50px;
+      transition: opacity 0.5s;
     }
 
     .btn {
-      padding: 15px 25px;
-      margin: 5px;
+      padding: 20px 30px;
+      margin: 10px;
       background-color: #007BFF;
       color: white;
       border: none;
-      border-radius: 5px;
-      font-size: 18px;
+      border-radius: 8px;
+      font-size: 20px;
       font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.2s;
     }
 
     .btn:hover {
       background-color: #0056b3;
     }
 
-    /* THE DEFINITION CARD STYLING 
-       This makes the text look like a dictionary entry 
-    */
+    /* Loading Message Styling */
+    #loading-msg {
+      display: none; /* Hidden initially */
+      font-size: 30px;
+      font-weight: bold;
+      color: #007BFF;
+      margin-top: 50px;
+    }
+
+    /* DEFINITION CARD STYLING */
     #definition-card {
-      display: none; /* HIDDEN INITIALLY */
-      
+      display: none; 
       background-color: white;
-      border: 1px solid #ccc;
-      border-left: 10px solid #d9534f; /* Red accent line */
-      border-radius: 8px;
-      padding: 30px;
-      margin: 20px auto; /* Centers the box */
-      max-width: 500px;
+      border: 6px solid #333;
+      border-radius: 15px;
+      padding: 40px;
+      margin: 0 auto;
+      max-width: 800px;
       text-align: left;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Adds a 3D shadow effect */
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      
+      /* Animation for Zoom In */
+      animation: zoomIn 0.5s ease-out; 
     }
 
-    /* Big Word */
+    @keyframes zoomIn {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
+
     .word-title {
-      font-size: 48px;
+      font-size: 80px;
       margin: 0;
-      color: #222;
+      color: #000;
+      letter-spacing: -2px;
     }
 
-    /* Pronunciation / Part of speech */
     .phonetic {
-      color: #777;
-      font-size: 18px;
-      margin-bottom: 15px;
+      color: #555;
+      font-size: 30px;
+      margin-bottom: 20px;
       display: block;
+      font-style: italic;
     }
 
-    /* The actual meaning */
     .meaning {
-      font-size: 24px;
-      line-height: 1.4;
-      color: #444;
+      font-size: 40px;
+      line-height: 1.3;
+      color: #222;
+      font-weight: 500;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>My Selection Page</h1>
-  <p>Select an amount to claim your prize:</p>
+  <h1 id="main-title">My Selection Page</h1>
+  <p id="sub-title" style="font-size: 20px;">Select an amount to claim your prize:</p>
 
-  <div class="button-row">
-    <button class="btn" onclick="revealTrick()">1,000</button>
-    <button class="btn" onclick="revealTrick()">10,000</button>
-    <button class="btn" onclick="revealTrick()">100,000</button>
-    <button class="btn" onclick="revealTrick()">1,000,000</button>
+  <div class="button-row" id="buttons-container">
+    <button class="btn" onclick="startPrank()">1,000</button>
+    <button class="btn" onclick="startPrank()">10,000</button>
+    <button class="btn" onclick="startPrank()">100,000</button>
+    <button class="btn" onclick="startPrank()">1,000,000</button>
   </div>
+
+  <div id="loading-msg">Verifying Bank Account... Please Wait...</div>
 
   <div id="definition-card">
     <h1 class="word-title">Gullible</h1>
@@ -100,15 +117,7 @@
     </p>
   </div>
 
-  <script>
-    function revealTrick() {
-      // 1. Find the hidden card
-      let card = document.getElementById("definition-card");
-
-      // 2. Change display from 'none' to 'block'
-      card.style.display = "block";
-    }
-  </script>
+  <script src="script.js"></script>
 
 </body>
-</html>>
+</html>
